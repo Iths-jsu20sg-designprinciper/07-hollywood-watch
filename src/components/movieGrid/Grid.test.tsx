@@ -4,7 +4,7 @@ import Grid from './Grid'
 describe('Grid component', () => {
 
 	it('renders without errors', () => {
-		render(<Grid />)
+		render(<Grid searchString="" />)
 	})
 
 	// TODO: hur testa att grid renderar cards med rätt data?

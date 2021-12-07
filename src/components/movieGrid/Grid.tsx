@@ -10,11 +10,18 @@ const data: Movie[] = [
 	{ id: 6, title: "Howl's Moving Castle", premiereDate: '2004', imageUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg' }
 ]
 
-const Grid = () => {
-	// const testData: Movie = { title: '', premiereDate: '', imageUrl: '' }
+interface Props {
+	searchString: string;
+}
+
+const Grid = ({ searchString }: Props) => {
+	const filteredData = data.filter(movie => movie.title.toLowerCase().includes(searchString.toLowerCase()))
+	// "Howl's Moving Castle" === "castle"
+	// "Castle" !== "castle"
+	
 	return (
 		<main className="card-grid">
-			{data.map(movie => (
+			{filteredData.map(movie => (
 				<Card key={movie.id} movie={movie} />
 			))}
 			

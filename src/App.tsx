@@ -9,7 +9,7 @@ function App() {
 		<div className="component">
 			<Header searchText={searchString} setSearchText={setSearchString} />
 
-			<Grid />
+			<Grid searchString={searchString} />
 		</div>
 	);
 }

@@ -14,8 +14,6 @@ it('shows matching movie when typing in the search field', () => {
 	// Integration test
 	const wrapper = mount(<App />)
 	
-	// shallow(<Header searchText="" setSearchText={() => {}} />)
-
 	const searchString = 'castle'
 	const input = wrapper.find('header input')
 	input.simulate('change', { target: { value: searchString } })
@@ -26,6 +24,6 @@ it('shows matching movie when typing in the search field', () => {
 
 	titles.forEach(title => {
 		const actualTitle = title.text()
-		expect(actualTitle).toMatch(searchString)
+		expect(actualTitle.toLowerCase()).toMatch(searchString.toLowerCase())
 	})
 })

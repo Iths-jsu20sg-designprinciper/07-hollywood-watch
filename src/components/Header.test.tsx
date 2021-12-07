@@ -18,5 +18,4 @@ describe('Header component', () => {
 		const value = input.render().val()
 		expect( value ).toBe('')
 	})
-
 })
