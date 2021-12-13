@@ -4,7 +4,7 @@ import Grid from './Grid'
 describe('Grid component', () => {
 
 	it('renders without errors', () => {
-		render(<Grid searchString="" />)
+		render(<Grid searchString="" movies={[]} />)
 	})
 
 	// TODO: hur testa att grid renderar cards med rätt data?

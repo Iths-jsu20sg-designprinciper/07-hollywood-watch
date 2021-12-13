@@ -9,8 +9,11 @@ body {
 header {
 	text-align: center;
 }
-h1 {
+h1, .new-movie-form {
 	color: #e78917;
+}
+label {
+	display: block;
 }
 header input {
 	font-size: 1.5em;
