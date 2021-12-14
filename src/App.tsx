@@ -18,7 +18,7 @@ function App() {
 	
 	return (
 		<div className="component">
-			<Header searchText={searchString} setSearchText={setSearchString} />
+			<Header />
 			<Form addMovie={addMovie} />
 			<Grid searchString={searchString} movies={movies} />
 		</div>
