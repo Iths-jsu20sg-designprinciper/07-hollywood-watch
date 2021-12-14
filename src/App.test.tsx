@@ -2,17 +2,19 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { mount } from 'enzyme'
 import App from './App';
-import { Movie } from './models/Movie'
+// import { Movie } from './models/Movie'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 test('renders without errors', () => {
-  render(<App />);
+  render(<Provider store={store}> <App /> </Provider>);
 //   const linkElement = screen.getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 });
 
 it('shows matching movie when typing in the search field', () => {
 	// Integration test
-	const wrapper = mount(<App />)
+	const wrapper = mount(<Provider store={store}> <App /> </Provider>)
 	
 	const searchString = 'castle'
 	const input = wrapper.find('header input')
