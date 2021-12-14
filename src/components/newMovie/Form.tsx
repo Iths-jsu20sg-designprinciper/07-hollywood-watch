@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { Movie } from '../../models/Movie'
+import { useDispatch } from 'react-redux'
+import { actions } from '../../features/movies'
 
-interface Props {
-	addMovie: (movie: Movie) => void;
-}
+// interface Props {
+// 	addMovie: (movie: Movie) => void;
+// }
 
-const Form = ({ addMovie }: Props) => {
+const Form = () => {
+	const dispatch = useDispatch()
+
 	const [title, setTitle] = useState('')
 	const [premiereDate, setPremiereDate] = useState('0000')
 	const [imageUrl, setImageUrl] = useState('url.jpg')
@@ -18,7 +22,8 @@ const Form = ({ addMovie }: Props) => {
 			imageUrl: imageUrl
 		}
 
-		addMovie(m)
+		// addMovie(m)
+		dispatch( actions.addMovie(m) )
 	}
 	return (
 		<div className="new-movie-form">
