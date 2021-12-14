@@ -10,7 +10,11 @@ function App() {
 	const [searchString, setSearchString] = useState<string>('')
 	const [movies, setMovies] = useState<Movie[]>(defaultMovies)
 	
-	function addMovie(movie: Movie): void {}
+	function addMovie(movie: Movie): void {
+		// movies.push(movie) - fel! Muterar arrayen
+		console.log('addMovie')
+		setMovies( [ ...movies, movie ] )
+	}
 	
 	return (
 		<div className="component">
