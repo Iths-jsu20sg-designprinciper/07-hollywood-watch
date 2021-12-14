@@ -7,7 +7,6 @@ import { defaultMovies } from './data/defaultMovies'
 import { Movie } from './models/Movie'
 
 function App() {
-	const [searchString, setSearchString] = useState<string>('')
 	const [movies, setMovies] = useState<Movie[]>(defaultMovies)
 	
 	function addMovie(movie: Movie): void {
@@ -20,7 +19,7 @@ function App() {
 		<div className="component">
 			<Header />
 			<Form addMovie={addMovie} />
-			<Grid searchString={searchString} movies={movies} />
+			<Grid movies={movies} />
 		</div>
 	);
 }

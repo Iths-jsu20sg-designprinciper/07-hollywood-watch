@@ -1,13 +1,15 @@
 import Card from './Card'
 import { Movie } from '../../models/Movie'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 
 interface Props {
-	searchString: string;
 	movies: Movie[];
 }
 
-const Grid = ({ searchString, movies }: Props) => {
+const Grid = ({ movies }: Props) => {
+	const searchString = useSelector((state: RootState) => state.searchString)
 	const filteredData = movies.filter(movie => movie.title.toLowerCase().includes(searchString.toLowerCase()))
 	// "Howl's Moving Castle" === "castle"
 	// "Castle" !== "castle"
